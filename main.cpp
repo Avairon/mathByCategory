@@ -23,6 +23,8 @@ int sumCount = 0;
 int diffCount = 0;
 int multiCount = 0;
 
+int kostyl = 0;
+
 int counter = 0;
 
 int sum(){
@@ -81,9 +83,9 @@ int multi(){
             bufferMulti[i][d] = (a[d] * b[i] * 10^d) % 10;
             
             bufferCount[i] = bufferMulti[i][d] / 10;
-            cMulti[i + 100]+=bufferMulti[i][d] + bufferCount[i] % 10; 
-            
-            cout << bufferMulti[i][d] << " i = " << i << " d =  " << d << "\n";
+            //cMulti[i + 100]+=bufferMulti[i][d] + bufferCount[i] % 10; 
+            kostyl += bufferMulti[i][d] + bufferCount[i] % 10;
+            //cout << bufferMulti[i][d] << " i = " << i << " d =  " << d << "\n";
         }
         
     }
@@ -138,7 +140,7 @@ int main()
     for(int i = 199 - diffCount; i < 200; i++) cout << cDiff[i];
     
     //multi();
-    //cout << "\n" << "Multi: ";
+    //cout << "\n" << "Multi: " << kostyl;
     //for(int i = 0; i < 200; i++) cout << cMulti[i];
     
 }
